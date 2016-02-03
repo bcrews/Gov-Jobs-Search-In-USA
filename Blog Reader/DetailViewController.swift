@@ -10,7 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-  @IBOutlet weak var detailDescriptionLabel: UILabel!
+  
+  @IBOutlet weak var webview: UIWebView!
 
 
   var detailItem: AnyObject? {
@@ -23,8 +24,12 @@ class DetailViewController: UIViewController {
   func configureView() {
     // Update the user interface for the detail item.
     if let detail = self.detailItem {
-        if let label = self.detailDescriptionLabel {
-            label.text = detail.valueForKey("timeStamp")!.description
+        if let jobWebView = self.webview {
+          
+          let url = NSURL(string: detail.valueForKey("url")!.description)
+          let urlRequest = NSURLRequest(URL: url!)
+          jobWebView.loadRequest(urlRequest)
+          
         }
     }
   }

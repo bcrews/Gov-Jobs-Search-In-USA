@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42C20D8F1C61628100CF4373 /* Blog Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blog Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gov Jobs Search In USA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C20D921C61628100CF4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42C20D951C61628100CF4373 /* Blog_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Blog_Reader.xcdatamodel; sourceTree = "<group>"; };
 		42C20D971C61628100CF4373 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		42C20D861C61628100CF4373 = {
 			isa = PBXGroup;
 			children = (
-				42C20D911C61628100CF4373 /* Blog Reader */,
+				42C20D911C61628100CF4373 /* Gov Jobs Search In USA */,
 				42C20D901C61628100CF4373 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		42C20D901C61628100CF4373 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42C20D8F1C61628100CF4373 /* Blog Reader.app */,
+				42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42C20D911C61628100CF4373 /* Blog Reader */ = {
+		42C20D911C61628100CF4373 /* Gov Jobs Search In USA */ = {
 			isa = PBXGroup;
 			children = (
 				42C20D921C61628100CF4373 /* AppDelegate.swift */,
@@ -67,15 +67,16 @@
 				42C20DA31C61628100CF4373 /* Info.plist */,
 				42C20D941C61628100CF4373 /* Blog_Reader.xcdatamodeld */,
 			);
+			name = "Gov Jobs Search In USA";
 			path = "Blog Reader";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42C20D8E1C61628100CF4373 /* Blog Reader */ = {
+		42C20D8E1C61628100CF4373 /* Gov Jobs Search In USA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42C20DA61C61628100CF4373 /* Build configuration list for PBXNativeTarget "Blog Reader" */;
+			buildConfigurationList = 42C20DA61C61628100CF4373 /* Build configuration list for PBXNativeTarget "Gov Jobs Search In USA" */;
 			buildPhases = (
 				42C20D8B1C61628100CF4373 /* Sources */,
 				42C20D8C1C61628100CF4373 /* Frameworks */,
@@ -85,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = "Blog Reader";
+			name = "Gov Jobs Search In USA";
 			productName = "Blog Reader";
-			productReference = 42C20D8F1C61628100CF4373 /* Blog Reader.app */;
+			productReference = 42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,10 +103,11 @@
 				TargetAttributes = {
 					42C20D8E1C61628100CF4373 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = N6QSYL24TV;
 					};
 				};
 			};
-			buildConfigurationList = 42C20D8A1C61628100CF4373 /* Build configuration list for PBXProject "Blog Reader" */;
+			buildConfigurationList = 42C20D8A1C61628100CF4373 /* Build configuration list for PBXProject "Gov Jobs Search In USA" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42C20D8E1C61628100CF4373 /* Blog Reader */,
+				42C20D8E1C61628100CF4373 /* Gov Jobs Search In USA */,
 			);
 		};
 /* End PBXProject section */
@@ -257,10 +259,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Blog Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bcappdesigns.Blog-Reader";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcappdesigns.GovJobsSearchInUSA;
+				PRODUCT_NAME = "Gov Jobs Search In USA";
 			};
 			name = Debug;
 		};
@@ -268,17 +271,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Blog Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bcappdesigns.Blog-Reader";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bcappdesigns.GovJobsSearchInUSA;
+				PRODUCT_NAME = "Gov Jobs Search In USA";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42C20D8A1C61628100CF4373 /* Build configuration list for PBXProject "Blog Reader" */ = {
+		42C20D8A1C61628100CF4373 /* Build configuration list for PBXProject "Gov Jobs Search In USA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42C20DA41C61628100CF4373 /* Debug */,
@@ -287,7 +291,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42C20DA61C61628100CF4373 /* Build configuration list for PBXNativeTarget "Blog Reader" */ = {
+		42C20DA61C61628100CF4373 /* Build configuration list for PBXNativeTarget "Gov Jobs Search In USA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42C20DA71C61628100CF4373 /* Debug */,
