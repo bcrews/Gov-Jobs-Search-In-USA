@@ -4,8 +4,8 @@
         <attribute name="end_date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locations" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="maximum" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="minimum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maximum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minimum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="organization_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rate_interval_code" optional="YES" attributeType="String" syncable="YES"/>

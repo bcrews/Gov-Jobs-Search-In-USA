@@ -9,7 +9,10 @@
 import UIKit
 import CoreData
 
+
+
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+  
   
   var detailViewController: DetailViewController? = nil
   var managedObjectContext: NSManagedObjectContext? = nil
@@ -39,7 +42,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
           do {
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSArray
             
-            // print(jsonResult)
+            //  print(jsonResult)
             
             if jsonResult.count > 0 {
               
@@ -51,16 +54,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
               do { let results = try context.executeFetchRequest(request)
                 
                 if results.count > 0 {
-                  // Loop through and delect the items in Core Data
+                  // Loop through and delete the items in Core Data
                   for result in results {
                     context.deleteObject(result as! NSManagedObject)
                     
                     // Save the updated cleared items
-                    do { try context.save() } catch {}
+                    do { try context.save() } catch {print("Error in context save cleared items to CoreData")}
                   }
                 }
                 
-              } catch {}
+              } catch {print("Error in context.executeFetchRequest from CoreData")}
               
               
               for job in jsonResult {
@@ -68,20 +71,48 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 if let position_title = job["position_title"] as? String {
                   if let organization_name = job["organization_name"] as? String {
                     if let url = job["url"] as? String {
-                      
-                      let newJob: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("JobItems", inManagedObjectContext: context)
-                      
-                      newJob.setValue(position_title, forKey: "position_title")
-                      newJob.setValue(organization_name, forKey: "organization_name")
-                      newJob.setValue(url, forKey: "url")
-                      
-                      print(position_title)
-                      print(organization_name)
-                      print(url)
-                    }
-                  }
-                }
+                      if let minimum = job["minimum"] as? NSNumber {
+                        if let maximum = job["maximum"] as? NSNumber {
+                          if var start_date = job["start_date"] as? String {
+                            if var end_date = job["end_date"] as? String {
+                              if let rate_code = job["rate_interval_code"] as? String {
+                                
+                                
+                                start_date = self.convertDate(start_date)
+                                end_date = self.convertDate(end_date)
+                                
+                                let newJob: NSManagedObject =
+                                NSEntityDescription.insertNewObjectForEntityForName("JobItems",
+                                  inManagedObjectContext: context)
+                                
+                                newJob.setValue(position_title, forKey: "position_title")
+                                newJob.setValue(organization_name, forKey: "organization_name")
+                                newJob.setValue(url, forKey: "url")
+                                newJob.setValue(minimum, forKey: "minimum")
+                                newJob.setValue(maximum, forKey: "maximum")
+                                newJob.setValue(start_date, forKey: "start_date")
+                                newJob.setValue(end_date, forKey: "end_date")
+                                newJob.setValue(rate_code, forKey: "rate_interval_code")
+                                
+                                print(position_title)
+                                print(organization_name)
+                                print(url)
+                                //  print(locations)
+                                print(minimum)
+                                print(maximum)
+                                print(start_date)
+                                print(end_date)
+                                print(rate_code)
+                              } // rate_code
+                            } // end_date
+                          } // start_date
+                        } // maximum
+                      } // minimum
+                    } // url
+                  } // organization_name
+                }  // position_title
               }
+              
             }
           } catch {
             print("Failed to Deserialize JSON")
@@ -92,8 +123,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     task.resume()
     
-    
-    
+    let image = UIImage(named: "USA-Gov-Jobs-Logo-Banner")
+    let imageViewHeader = UIImageView(frame: CGRect(x: 0,y: 0 , width: (self.view.bounds.width), height: (image?.size.height)!/4))
+    imageViewHeader.image = image
+    imageViewHeader.contentMode = .ScaleToFill
+    self.tableView.tableHeaderView = imageViewHeader
+    //self.navigationItem.titleView = imageViewHeader
     
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -102,6 +137,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       let controllers = split.viewControllers
       self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
     }
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -142,9 +181,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCellWithIdentifier("JobCell", forIndexPath: indexPath)
     self.configureCell(cell, atIndexPath: indexPath)
     return cell
+  }
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 118
   }
   
   override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -169,8 +211,32 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
   
   func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+    
+    let numberFormatter = NSNumberFormatter()
+    numberFormatter.numberStyle = .CurrencyStyle
+    
+    
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = .ShortStyle
+    
     let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
-    cell.textLabel!.text = object.valueForKey("position_title")!.description
+    
+    let jobCell = cell as! JobCell
+    jobCell.position_title.text = object.valueForKey("position_title")!.description
+    jobCell.organization_name.text = object.valueForKey("organization_name")!.description
+    //    jobCell.locations.text = object.valueForKey("locations")!.description
+    
+    if object.valueForKey("rate_interval_code")! .isEqualToString("PA") {
+      numberFormatter.maximumFractionDigits = 0
+    } else { numberFormatter.maximumFractionDigits = 2 }
+    
+    jobCell.minimum.text = numberFormatter.stringFromNumber(object.valueForKey("minimum")! as! NSNumber)
+    jobCell.maximum.text = numberFormatter.stringFromNumber(object.valueForKey("maximum")! as! NSNumber)
+    jobCell.start_date.text = object.valueForKey("start_date")!.description
+    jobCell.end_date.text = object.valueForKey("end_date")!.description
+    let rate_code = object.valueForKey("rate_interval_code")!.description
+    jobCell.rate_interval_code.text = findRateCodeDescription(rate_code)
   }
   
   // MARK: - Fetched results controller
@@ -254,5 +320,33 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
   */
   
+  internal  func convertDate(date: String) -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    
+    let newDate = dateFormatter.dateFromString(date)
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+    let reformatedDate = dateFormatter.stringFromDate(newDate!)
+    return reformatedDate
+  }
+  
+  func findRateCodeDescription(rateCode: String) -> String {
+    var description:String = ""
+    
+    switch rateCode {
+    case "PH":
+      description =  "per Hour"
+      break
+    case "PA":
+      description =  "per Year"
+      break
+    default:
+      break
+    }
+    return description
+  }
+  
 }
+
+
 
