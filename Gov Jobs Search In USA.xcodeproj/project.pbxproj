@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4239AAAA1C646616001BDD65 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239AAA91C646616001BDD65 /* JobCell.swift */; };
+		427AC2A51C702819002E6F30 /* JobSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427AC2A41C702819002E6F30 /* JobSearchViewController.swift */; };
 		42C20D931C61628100CF4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D921C61628100CF4373 /* AppDelegate.swift */; };
 		42C20D961C61628100CF4373 /* Blog_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D941C61628100CF4373 /* Blog_Reader.xcdatamodeld */; };
 		42C20D981C61628100CF4373 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D971C61628100CF4373 /* MasterViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4239AAA91C646616001BDD65 /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
+		427AC2A41C702819002E6F30 /* JobSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSearchViewController.swift; sourceTree = "<group>"; };
 		42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gov Jobs Search In USA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C20D921C61628100CF4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42C20D951C61628100CF4373 /* Blog_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Blog_Reader.xcdatamodel; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				42C20D921C61628100CF4373 /* AppDelegate.swift */,
+				427AC2A41C702819002E6F30 /* JobSearchViewController.swift */,
 				42C20D971C61628100CF4373 /* MasterViewController.swift */,
 				42C20D991C61628100CF4373 /* DetailViewController.swift */,
 				4239AAA91C646616001BDD65 /* JobCell.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				42C20D961C61628100CF4373 /* Blog_Reader.xcdatamodeld in Sources */,
 				4239AAAA1C646616001BDD65 /* JobCell.swift in Sources */,
+				427AC2A51C702819002E6F30 /* JobSearchViewController.swift in Sources */,
 				42C20D931C61628100CF4373 /* AppDelegate.swift in Sources */,
 				42C20D981C61628100CF4373 /* MasterViewController.swift in Sources */,
 				42C20D9A1C61628100CF4373 /* DetailViewController.swift in Sources */,

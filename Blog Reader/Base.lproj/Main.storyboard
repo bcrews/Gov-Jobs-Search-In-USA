@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-630"/>
+            <point key="canvasLocation" x="386" y="-208"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -54,7 +55,250 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="1133" y="551"/>
+        </scene>
+        <!--Job Search View Controller-->
+        <scene sceneID="Vz9-LP-vj5">
+            <objects>
+                <viewController id="2th-Da-lxW" customClass="JobSearchViewController" customModule="Gov_Jobs_Search_In_USA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ArX-f5-Sn8"/>
+                        <viewControllerLayoutGuide type="bottom" id="cFh-iC-BJf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bUr-IN-b6m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="USA-Gov-Jobs-Logo-Banner" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-2t-gSl">
+                                <rect key="frame" x="0.0" y="20" width="600" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9cN-2t-gSl" secondAttribute="height" multiplier="75:16" id="mK9-xp-dBw"/>
+                                    <constraint firstAttribute="height" constant="128" id="p11-7y-gAg"/>
+                                    <constraint firstAttribute="width" secondItem="9cN-2t-gSl" secondAttribute="height" multiplier="75:16" id="wSR-ZP-UbL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wSR-ZP-UbL"/>
+                                        <exclude reference="mK9-xp-dBw"/>
+                                        <exclude reference="p11-7y-gAg"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01M-IG-Elz">
+                                <rect key="frame" x="20" y="158" width="41" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEg-7x-3YA">
+                                <rect key="frame" x="78" y="228" width="502" height="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="city, state or zip code">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-Kr-Tnz">
+                                <rect key="frame" x="20" y="224" width="55" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Where">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="LuS-NM-z6w">
+                                <rect key="frame" x="69" y="162.5" width="511" height="16.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="job title, keywords or company">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder=" job title, keywords or company" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="m4u-81-8Uh">
+                                <rect key="frame" x="20" y="186" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Utl-eh-TnY"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder=" city, state or zip code" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bBF-ic-AMA">
+                                <rect key="frame" x="78" y="256" width="502" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OeR-XG-Mlx"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="dCz-Jp-uPq">
+                                <rect key="frame" x="20" y="253" width="42" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="7vc-hI-68m"/>
+                                    <constraint firstAttribute="height" constant="30" id="aFS-JO-Q4K"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-sV-bde">
+                                <rect key="frame" x="85" y="316" width="430" height="41.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Find Jobs">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitSearchString:" destination="2th-Da-lxW" eventType="touchUpInside" id="Ksg-hQ-fYs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="01M-IG-Elz" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="8" id="0lp-DK-h5P"/>
+                            <constraint firstItem="dCz-Jp-uPq" firstAttribute="top" secondItem="6zf-Kr-Tnz" secondAttribute="bottom" constant="8" id="4B7-lk-lgr"/>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="top" secondItem="YEg-7x-3YA" secondAttribute="bottom" constant="11" id="6Bf-2p-7KK"/>
+                            <constraint firstItem="LuS-NM-z6w" firstAttribute="top" secondItem="ArX-f5-Sn8" secondAttribute="bottom" constant="142.5" id="6sO-Yh-DCa"/>
+                            <constraint firstItem="LuS-NM-z6w" firstAttribute="leading" secondItem="01M-IG-Elz" secondAttribute="trailing" constant="8" id="8Bw-6P-0m9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dCz-Jp-uPq" secondAttribute="leading" id="APN-4J-1ky">
+                                <variation key="widthClass=regular" constant="-96"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="LuS-NM-z6w" secondAttribute="trailing" id="E5l-lt-mi7">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zvi-sV-bde" secondAttribute="trailing" constant="65" id="EAi-ZP-Nfj">
+                                <variation key="widthClass=regular" constant="128"/>
+                            </constraint>
+                            <constraint firstItem="Zvi-sV-bde" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="65" id="EJa-aP-gdW">
+                                <variation key="widthClass=regular" constant="128"/>
+                            </constraint>
+                            <constraint firstItem="Zvi-sV-bde" firstAttribute="centerX" secondItem="bUr-IN-b6m" secondAttribute="centerX" id="EqH-lP-AFL"/>
+                            <constraint firstItem="m4u-81-8Uh" firstAttribute="top" secondItem="01M-IG-Elz" secondAttribute="bottom" constant="7" id="FKf-wY-bhg"/>
+                            <constraint firstItem="01M-IG-Elz" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" id="M3Y-se-zoo">
+                                <variation key="widthClass=regular" constant="96"/>
+                            </constraint>
+                            <constraint firstAttribute="leadingMargin" secondItem="6zf-Kr-Tnz" secondAttribute="leading" id="M7W-gZ-urb">
+                                <variation key="widthClass=regular" constant="-96"/>
+                            </constraint>
+                            <constraint firstItem="m4u-81-8Uh" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" id="Qlq-pQ-YId">
+                                <variation key="widthClass=regular" constant="96"/>
+                            </constraint>
+                            <constraint firstItem="9cN-2t-gSl" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="-20" id="QtH-TS-ikt"/>
+                            <constraint firstItem="LuS-NM-z6w" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="12.5" id="Szj-mP-ocY"/>
+                            <constraint firstItem="YEg-7x-3YA" firstAttribute="top" secondItem="m4u-81-8Uh" secondAttribute="bottom" constant="12" id="Tzc-yU-CKy"/>
+                            <constraint firstItem="LuS-NM-z6w" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="49" id="UAv-6w-KNp">
+                                <variation key="widthClass=regular" constant="145"/>
+                            </constraint>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="leading" secondItem="dCz-Jp-uPq" secondAttribute="trailing" constant="16" id="WP6-dL-Qw3">
+                                <variation key="widthClass=regular" constant="6"/>
+                            </constraint>
+                            <constraint firstItem="6zf-Kr-Tnz" firstAttribute="top" secondItem="m4u-81-8Uh" secondAttribute="bottom" constant="8" id="aHG-2M-rzO"/>
+                            <constraint firstItem="m4u-81-8Uh" firstAttribute="top" secondItem="01M-IG-Elz" secondAttribute="bottom" constant="7" id="cIT-Tc-c7O"/>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="top" secondItem="YEg-7x-3YA" secondAttribute="bottom" constant="11" id="d1J-u7-dZ6"/>
+                            <constraint firstItem="YEg-7x-3YA" firstAttribute="trailing" secondItem="bUr-IN-b6m" secondAttribute="trailingMargin" id="euQ-SZ-trR">
+                                <variation key="widthClass=regular" constant="96"/>
+                            </constraint>
+                            <constraint firstItem="m4u-81-8Uh" firstAttribute="top" secondItem="LuS-NM-z6w" secondAttribute="bottom" constant="7" id="gxK-XE-og5"/>
+                            <constraint firstItem="9cN-2t-gSl" firstAttribute="top" secondItem="ArX-f5-Sn8" secondAttribute="bottom" id="h4C-ZZ-t06"/>
+                            <constraint firstItem="YEg-7x-3YA" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="58" id="j9A-s3-ics">
+                                <variation key="widthClass=regular" constant="154"/>
+                            </constraint>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="trailing" secondItem="bUr-IN-b6m" secondAttribute="trailingMargin" id="k6j-Kz-y2M">
+                                <variation key="widthClass=regular" constant="-96"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEg-7x-3YA" secondAttribute="trailing" id="lBx-EA-Qcr">
+                                <variation key="widthClass=regular" constant="-96"/>
+                            </constraint>
+                            <constraint firstItem="01M-IG-Elz" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="8" id="me9-hV-WOD"/>
+                            <constraint firstItem="YEg-7x-3YA" firstAttribute="top" secondItem="m4u-81-8Uh" secondAttribute="bottom" constant="12" id="nPD-5H-fop"/>
+                            <constraint firstItem="Zvi-sV-bde" firstAttribute="top" secondItem="bBF-ic-AMA" secondAttribute="bottom" constant="30" id="pO6-DN-wpP">
+                                <variation key="widthClass=regular" constant="45"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="18"/>
+                            </constraint>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="58" id="qFw-d0-8G3">
+                                <variation key="widthClass=regular" constant="144"/>
+                            </constraint>
+                            <constraint firstItem="9cN-2t-gSl" firstAttribute="top" secondItem="ArX-f5-Sn8" secondAttribute="bottom" id="rm7-Yf-fty"/>
+                            <constraint firstItem="m4u-81-8Uh" firstAttribute="trailing" secondItem="bUr-IN-b6m" secondAttribute="trailingMargin" id="sEV-7I-X20">
+                                <variation key="widthClass=regular" constant="-96"/>
+                            </constraint>
+                            <constraint firstItem="YEg-7x-3YA" firstAttribute="leading" secondItem="6zf-Kr-Tnz" secondAttribute="trailing" constant="3" id="uqa-3o-ike"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9cN-2t-gSl" secondAttribute="trailing" constant="-20" id="vRy-Zc-I5h"/>
+                            <constraint firstItem="01M-IG-Elz" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="8" id="xCd-Yi-Ryi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="keywordSearchField" destination="m4u-81-8Uh" id="62Q-kk-UAu"/>
+                        <outlet property="locationSearchField" destination="bBF-ic-AMA" id="c1v-qh-nVE"/>
+                        <segue destination="8a0-46-xCx" kind="unwind" identifier="unwindToMaster" unwindAction="unwindToMaster:" id="iBN-L5-o19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0v-5k-yHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8a0-46-xCx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="-617"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -68,7 +312,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-856" y="-330"/>
+            <point key="canvasLocation" x="-432" y="92"/>
         </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
@@ -86,8 +330,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="117.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDw-Dh-Rpg">
-                                            <rect key="frame" x="8" y="2" width="584" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDw-Dh-Rpg">
+                                            <rect key="frame" x="8" y="2" width="584" height="19.5"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Position_Title_Label">
                                                     <attributes>
@@ -100,8 +344,8 @@
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-2u-YDM">
-                                            <rect key="frame" x="8" y="29" width="584" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-2u-YDM">
+                                            <rect key="frame" x="8" y="28" width="584" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="584" id="Qll-nb-20S"/>
                                             </constraints>
@@ -120,8 +364,8 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RME-Pt-8cK">
-                                            <rect key="frame" x="8" y="49" width="584" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RME-Pt-8cK">
+                                            <rect key="frame" x="8" y="48" width="584" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Locations_Label">
                                                     <attributes>
@@ -132,8 +376,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B5S-SC-jpn">
-                                            <rect key="frame" x="8" y="71" width="90" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B5S-SC-jpn">
+                                            <rect key="frame" x="8" y="70" width="90" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Salary Range: ">
                                                     <attributes>
@@ -144,8 +388,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eWH-vw-UbA">
-                                            <rect key="frame" x="99" y="71" width="95" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eWH-vw-UbA">
+                                            <rect key="frame" x="99" y="70" width="95" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Minimum_Label">
                                                     <attributes>
@@ -156,8 +400,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ad7-MH-xsu">
-                                            <rect key="frame" x="194" y="71" width="19.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ad7-MH-xsu">
+                                            <rect key="frame" x="194" y="70" width="19.5" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="to">
                                                     <attributes>
@@ -169,8 +413,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8bu-Gr-mKg">
-                                            <rect key="frame" x="222" y="71" width="98.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8bu-Gr-mKg">
+                                            <rect key="frame" x="222" y="70" width="98.5" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Maximum_Label">
                                                     <attributes>
@@ -182,8 +426,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LJy-lq-szs">
-                                            <rect key="frame" x="8" y="92" width="68" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LJy-lq-szs">
+                                            <rect key="frame" x="8" y="91" width="68" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="IbC-pd-f03"/>
                                             </constraints>
@@ -202,8 +446,8 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zHU-VX-2As">
-                                            <rect key="frame" x="201" y="92" width="61" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zHU-VX-2As">
+                                            <rect key="frame" x="201" y="91" width="61" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="End Date:">
                                                     <attributes>
@@ -214,8 +458,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-aH-NFg">
-                                            <rect key="frame" x="84" y="92" width="105.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-aH-NFg">
+                                            <rect key="frame" x="84" y="91" width="105.5" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Start_Date_Label">
                                                     <attributes>
@@ -226,8 +470,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-2y-9o0">
-                                            <rect key="frame" x="268" y="92" width="98.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-2y-9o0">
+                                            <rect key="frame" x="268" y="91" width="98.5" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="End_Date_Label">
                                                     <attributes>
@@ -238,8 +482,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pld-aq-1WQ">
-                                            <rect key="frame" x="325" y="71" width="27.5" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pld-aq-1WQ">
+                                            <rect key="frame" x="325" y="70" width="27.5" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Rate">
                                                     <attributes>
@@ -296,31 +540,6 @@
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PWl-29-SL9" detailTextLabel="082-Nn-gas" rowHeight="45" style="IBUITableViewCellStyleSubtitle" id="69n-em-5ge">
-                                <rect key="frame" x="0.0" y="204" width="600" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="69n-em-5ge" id="tli-Ia-yiB">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PWl-29-SL9">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="082-Nn-gas">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -328,11 +547,20 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jobs List" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Jobs List" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" title="❮ Job Search" id="Jr5-Th-Jm6">
+                            <connections>
+                                <segue destination="2th-Da-lxW" kind="presentation" modalTransitionStyle="flipHorizontal" id="TAB-Oo-M1e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="2th-Da-lxW" kind="presentation" identifier="JobSearchSegue" modalTransitionStyle="flipHorizontal" id="y95-8C-AB9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-630"/>
+            <point key="canvasLocation" x="1133" y="-196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -347,10 +575,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="379" y="551"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="USA-Gov-Jobs-Logo-Banner" width="1563" height="366"/>
+        <image name="location" width="256" height="256"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
+        <segue reference="y95-8C-AB9"/>
     </inferredMetricsTieBreakers>
 </document>

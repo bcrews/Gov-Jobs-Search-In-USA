@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+var newSearch: Bool = true
 
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
@@ -16,112 +17,119 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   
   var detailViewController: DetailViewController? = nil
   var managedObjectContext: NSManagedObjectContext? = nil
+  var postingChannelID: String! = "?PostingChannelID=SwBqw/ctY3+Cce3bXAK/bqQzyOdZjO51gfzvhN50LlU="
   
+  @IBAction func unwindToMaster(segue: UIStoryboardSegue) {
+    newSearch = false
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Core Data
-    let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    let context: NSManagedObjectContext = appDel.managedObjectContext
-    
-    let url = NSURL(string: "https://api.usa.gov/jobs/search.json?query=nursing&size=100")!
-    
-    let session = NSURLSession.sharedSession()
-    
-    let task = session.dataTaskWithURL(url) { (data, response, error) -> Void in
+    if !newSearch {
+      // Core Data
+      let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let context: NSManagedObjectContext = appDel.managedObjectContext
       
-      if error != nil {
-        print(error)
-      } else {
+      let url = NSURL(string: searchString!)!
+      
+      let session = NSURLSession.sharedSession()
+      
+      let task = session.dataTaskWithURL(url) { (data, response, error) -> Void in
         
-        if let data = data {
+        if error != nil {
+          print(error)
+        } else {
           
-          //    print(NSString(data: data, encoding: NSUTF8StringEncoding))
-          
-          do {
-            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+          if let data = data {
             
-            //  print(jsonResult)
+            //    print(NSString(data: data, encoding: NSUTF8StringEncoding))
             
-            if jsonResult.count > 0 {
+            do {
+              let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSArray
               
-              // Clear Core Data
-              let request = NSFetchRequest(entityName: "JobItems")
+              //  print(jsonResult)
               
-              request.returnsObjectsAsFaults = false
-              
-              do { let results = try context.executeFetchRequest(request)
+              if jsonResult.count > 0 {
                 
-                if results.count > 0 {
-                  // Loop through and delete the items in Core Data
-                  for result in results {
-                    context.deleteObject(result as! NSManagedObject)
-                    
-                    // Save the updated cleared items
-                    do { try context.save() } catch {print("Error in context save cleared items to CoreData")}
+                // Clear Core Data
+                let request = NSFetchRequest(entityName: "JobItems")
+                
+                request.returnsObjectsAsFaults = false
+                
+                do { let results = try context.executeFetchRequest(request)
+                  
+                  if results.count > 0 {
+                    // Loop through and delete the items in Core Data
+                    for result in results {
+                      context.deleteObject(result as! NSManagedObject)
+                      
+                      // Save the updated cleared items
+                      do { try context.save() } catch {print("Error in context save cleared items to CoreData")}
+                    }
                   }
+                  
+                } catch {print("Error in context.executeFetchRequest from CoreData")}
+                
+                
+                for job in jsonResult {
+                  
+                  if let position_title = job["position_title"] as? String {
+                    if let organization_name = job["organization_name"] as? String {
+                      if var url = job["url"] as? String {
+                        if let minimum = job["minimum"] as? NSNumber {
+                          if let maximum = job["maximum"] as? NSNumber {
+                            if var start_date = job["start_date"] as? String {
+                              if var end_date = job["end_date"] as? String {
+                                if let rate_code = job["rate_interval_code"] as? String {
+                                  
+                                  url += self.postingChannelID
+                                  
+                                  start_date = self.convertDate(start_date)
+                                  end_date = self.convertDate(end_date)
+                                  
+                                  let newJob: NSManagedObject =
+                                  NSEntityDescription.insertNewObjectForEntityForName("JobItems",
+                                    inManagedObjectContext: context)
+                                  
+                                  newJob.setValue(position_title, forKey: "position_title")
+                                  newJob.setValue(organization_name, forKey: "organization_name")
+                                  newJob.setValue(url, forKey: "url")
+                                  newJob.setValue(minimum, forKey: "minimum")
+                                  newJob.setValue(maximum, forKey: "maximum")
+                                  newJob.setValue(start_date, forKey: "start_date")
+                                  newJob.setValue(end_date, forKey: "end_date")
+                                  newJob.setValue(rate_code, forKey: "rate_interval_code")
+                                  
+                                  print(position_title)
+                                  print(organization_name)
+                                  print(url)
+                                  //  print(locations)
+                                  print(minimum)
+                                  print(maximum)
+                                  print(start_date)
+                                  print(end_date)
+                                  print(rate_code)
+                                } // rate_code
+                              } // end_date
+                            } // start_date
+                          } // maximum
+                        } // minimum
+                      } // url
+                    } // organization_name
+                  }  // position_title
                 }
                 
-              } catch {print("Error in context.executeFetchRequest from CoreData")}
-              
-              
-              for job in jsonResult {
-                
-                if let position_title = job["position_title"] as? String {
-                  if let organization_name = job["organization_name"] as? String {
-                    if let url = job["url"] as? String {
-                      if let minimum = job["minimum"] as? NSNumber {
-                        if let maximum = job["maximum"] as? NSNumber {
-                          if var start_date = job["start_date"] as? String {
-                            if var end_date = job["end_date"] as? String {
-                              if let rate_code = job["rate_interval_code"] as? String {
-                                
-                                
-                                start_date = self.convertDate(start_date)
-                                end_date = self.convertDate(end_date)
-                                
-                                let newJob: NSManagedObject =
-                                NSEntityDescription.insertNewObjectForEntityForName("JobItems",
-                                  inManagedObjectContext: context)
-                                
-                                newJob.setValue(position_title, forKey: "position_title")
-                                newJob.setValue(organization_name, forKey: "organization_name")
-                                newJob.setValue(url, forKey: "url")
-                                newJob.setValue(minimum, forKey: "minimum")
-                                newJob.setValue(maximum, forKey: "maximum")
-                                newJob.setValue(start_date, forKey: "start_date")
-                                newJob.setValue(end_date, forKey: "end_date")
-                                newJob.setValue(rate_code, forKey: "rate_interval_code")
-                                
-                                print(position_title)
-                                print(organization_name)
-                                print(url)
-                                //  print(locations)
-                                print(minimum)
-                                print(maximum)
-                                print(start_date)
-                                print(end_date)
-                                print(rate_code)
-                              } // rate_code
-                            } // end_date
-                          } // start_date
-                        } // maximum
-                      } // minimum
-                    } // url
-                  } // organization_name
-                }  // position_title
               }
-              
+            } catch {
+              print("Failed to Deserialize JSON")
             }
-          } catch {
-            print("Failed to Deserialize JSON")
           }
         }
       }
+      
+      task.resume()
     }
-    
-    task.resume()
     
     let image = UIImage(named: "USA-Gov-Jobs-Logo-Banner")
     let imageViewHeader = UIImageView(frame: CGRect(x: 0,y: 0 , width: (self.view.bounds.width), height: (image?.size.height)!/4))
@@ -137,6 +145,118 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       let controllers = split.viewControllers
       self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
     }
+    
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    if newSearch {
+      performSegueWithIdentifier("JobSearchSegue", sender: self)
+    } else {
+      // Core Data
+      let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+      let context: NSManagedObjectContext = appDel.managedObjectContext
+      
+      let url = NSURL(string: searchString!)!
+      
+      let session = NSURLSession.sharedSession()
+      
+      let task = session.dataTaskWithURL(url) { (data, response, error) -> Void in
+        
+        if error != nil {
+          print(error)
+        } else {
+          
+          if let data = data {
+            
+            //    print(NSString(data: data, encoding: NSUTF8StringEncoding))
+            
+            do {
+              let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+              
+              //  print(jsonResult)
+              
+              if jsonResult.count > 0 {
+                
+                // Clear Core Data
+                let request = NSFetchRequest(entityName: "JobItems")
+                
+                request.returnsObjectsAsFaults = false
+                
+                do { let results = try context.executeFetchRequest(request)
+                  
+                  if results.count > 0 {
+                    // Loop through and delete the items in Core Data
+                    for result in results {
+                      context.deleteObject(result as! NSManagedObject)
+                      
+                      // Save the updated cleared items
+                      do { try context.save() } catch {print("Error in context save cleared items to CoreData")}
+                    }
+                  }
+                  
+                } catch {print("Error in context.executeFetchRequest from CoreData")}
+                
+                
+                for job in jsonResult {
+                  
+                  if let position_title = job["position_title"] as? String {
+                    if let organization_name = job["organization_name"] as? String {
+                      if var url = job["url"] as? String {
+                        if let minimum = job["minimum"] as? NSNumber {
+                          if let maximum = job["maximum"] as? NSNumber {
+                            if var start_date = job["start_date"] as? String {
+                              if var end_date = job["end_date"] as? String {
+                                if let rate_code = job["rate_interval_code"] as? String {
+                                  
+                                  url += self.postingChannelID
+                                  
+                                  start_date = self.convertDate(start_date)
+                                  end_date = self.convertDate(end_date)
+                                  
+                                  let newJob: NSManagedObject =
+                                  NSEntityDescription.insertNewObjectForEntityForName("JobItems",
+                                    inManagedObjectContext: context)
+                                  
+                                  newJob.setValue(position_title, forKey: "position_title")
+                                  newJob.setValue(organization_name, forKey: "organization_name")
+                                  newJob.setValue(url, forKey: "url")
+                                  newJob.setValue(minimum, forKey: "minimum")
+                                  newJob.setValue(maximum, forKey: "maximum")
+                                  newJob.setValue(start_date, forKey: "start_date")
+                                  newJob.setValue(end_date, forKey: "end_date")
+                                  newJob.setValue(rate_code, forKey: "rate_interval_code")
+                                  
+                                  print(position_title)
+                                  print(organization_name)
+                                  print(url)
+                                  //  print(locations)
+                                  print(minimum)
+                                  print(maximum)
+                                  print(start_date)
+                                  print(end_date)
+                                  print(rate_code)
+                                } // rate_code
+                              } // end_date
+                            } // start_date
+                          } // maximum
+                        } // minimum
+                      } // url
+                    } // organization_name
+                  }  // position_title
+                }
+                
+              }
+            } catch {
+              print("Failed to Deserialize JSON")
+            }
+          }
+        }
+      }
+      
+      task.resume()
+    }
+    
+     self.tableView.reloadData()
   }
   
   override func prefersStatusBarHidden() -> Bool {
@@ -167,6 +287,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       }
     }
   }
+   
   
   // MARK: - Table View
   
