@@ -17,7 +17,7 @@ var postingChannelID: String! = "?PostingChannelID=SwBqw/ctY3+Cce3bXAK/bqQzyOdZj
 
 
 
-class JobSearchViewController: UIViewController {
+class JobSearchViewController: UIViewController, UITextFieldDelegate {
   
   @IBOutlet weak internal var keywordSearchField: UITextField!
   @IBOutlet weak internal var locationSearchField: UITextField!
@@ -76,7 +76,7 @@ class JobSearchViewController: UIViewController {
     performSegueWithIdentifier("unwindToMaster", sender: self)
       
     }
-    
+  }
     /*
     // MARK: - Navigation
     
@@ -87,5 +87,26 @@ class JobSearchViewController: UIViewController {
     }
     */
     
+  
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
+    let nextTag = textField.tag + 1
+  
+    if nextTag == 2 {
+      textField.resignFirstResponder()
+    }
+    // Find next responder
+    let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder!
+    
+    if (nextResponder != nil) {
+      // Found next responder, set it
+      nextResponder?.becomeFirstResponder()
+    } else {
+      // Not found, so remove keyboard
+      textField.resignFirstResponder()
+    }
+    return false // We do not want UITextField to insert line-breaks.
   }
+  
 }

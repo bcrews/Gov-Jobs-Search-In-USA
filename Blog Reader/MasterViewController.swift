@@ -246,6 +246,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 }
                 
               }
+                           
             } catch {
               print("Failed to Deserialize JSON")
             }
@@ -256,7 +257,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       task.resume()
     }
     
-     self.tableView.reloadData()
+    self.tableView.reloadData()
   }
   
   override func prefersStatusBarHidden() -> Bool {
@@ -429,17 +430,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
   
   func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    //   self.tableView.reloadData()
     self.tableView.endUpdates()
   }
-  
-  /*
-  // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
-  
-  func controllerDidChangeContent(controller: NSFetchedResultsController) {
-  // In the simplest, most efficient, case, reload the table view.
-  self.tableView.reloadData()
-  }
-  */
   
   internal  func convertDate(date: String) -> String {
     let dateFormatter = NSDateFormatter()
