@@ -183,13 +183,6 @@
                                     <outlet property="delegate" destination="2th-Da-lxW" id="2sM-e2-lB1"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="dCz-Jp-uPq">
-                                <rect key="frame" x="20" y="263" width="42" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="7vc-hI-68m"/>
-                                    <constraint firstAttribute="height" constant="30" id="aFS-JO-Q4K"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-sV-bde">
                                 <rect key="frame" x="85" y="335.5" width="430" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,17 +216,24 @@
                                     <action selector="submitSearchString:" destination="2th-Da-lxW" eventType="touchUpInside" id="Ksg-hQ-fYs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ4-Sj-IL4">
+                                <rect key="frame" x="20" y="265" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="EDP-ty-t3h"/>
+                                    <constraint firstAttribute="width" constant="42" id="xYk-oj-5gi"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="location"/>
+                                <connections>
+                                    <action selector="findMyLocation:" destination="2th-Da-lxW" eventType="touchUpInside" id="ZzN-00-AkF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="01M-IG-Elz" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="8" id="0lp-DK-h5P"/>
-                            <constraint firstItem="dCz-Jp-uPq" firstAttribute="top" secondItem="6zf-Kr-Tnz" secondAttribute="bottom" constant="8" id="4B7-lk-lgr"/>
                             <constraint firstItem="bBF-ic-AMA" firstAttribute="top" secondItem="YEg-7x-3YA" secondAttribute="bottom" constant="11" id="6Bf-2p-7KK"/>
                             <constraint firstItem="LuS-NM-z6w" firstAttribute="top" secondItem="ArX-f5-Sn8" secondAttribute="bottom" constant="142.5" id="6sO-Yh-DCa"/>
                             <constraint firstItem="LuS-NM-z6w" firstAttribute="leading" secondItem="01M-IG-Elz" secondAttribute="trailing" constant="8" id="8Bw-6P-0m9"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="dCz-Jp-uPq" secondAttribute="leading" id="APN-4J-1ky">
-                                <variation key="widthClass=regular" constant="-96"/>
-                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="LuS-NM-z6w" secondAttribute="trailing" id="E5l-lt-mi7">
                                 <variation key="widthClass=regular" constant="0.0"/>
                             </constraint>
@@ -251,6 +251,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="6zf-Kr-Tnz" secondAttribute="leading" id="M7W-gZ-urb">
                                 <variation key="widthClass=regular" constant="-96"/>
                             </constraint>
+                            <constraint firstItem="bBF-ic-AMA" firstAttribute="leading" secondItem="UJ4-Sj-IL4" secondAttribute="trailing" constant="16" id="Q4E-cR-Tld"/>
                             <constraint firstItem="m4u-81-8Uh" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" id="Qlq-pQ-YId">
                                 <variation key="widthClass=regular" constant="96"/>
                             </constraint>
@@ -259,9 +260,6 @@
                             <constraint firstItem="YEg-7x-3YA" firstAttribute="top" secondItem="m4u-81-8Uh" secondAttribute="bottom" constant="12" id="Tzc-yU-CKy"/>
                             <constraint firstItem="LuS-NM-z6w" firstAttribute="leading" secondItem="bUr-IN-b6m" secondAttribute="leadingMargin" constant="49" id="UAv-6w-KNp">
                                 <variation key="widthClass=regular" constant="145"/>
-                            </constraint>
-                            <constraint firstItem="bBF-ic-AMA" firstAttribute="leading" secondItem="dCz-Jp-uPq" secondAttribute="trailing" constant="16" id="WP6-dL-Qw3">
-                                <variation key="widthClass=regular" constant="6"/>
                             </constraint>
                             <constraint firstItem="6zf-Kr-Tnz" firstAttribute="top" secondItem="m4u-81-8Uh" secondAttribute="bottom" constant="8" id="aHG-2M-rzO"/>
                             <constraint firstItem="m4u-81-8Uh" firstAttribute="top" secondItem="01M-IG-Elz" secondAttribute="bottom" constant="7" id="cIT-Tc-c7O"/>
@@ -293,6 +291,7 @@
                             <constraint firstItem="m4u-81-8Uh" firstAttribute="trailing" secondItem="bUr-IN-b6m" secondAttribute="trailingMargin" id="sEV-7I-X20">
                                 <variation key="widthClass=regular" constant="-96"/>
                             </constraint>
+                            <constraint firstItem="UJ4-Sj-IL4" firstAttribute="top" secondItem="6zf-Kr-Tnz" secondAttribute="bottom" constant="10" id="tJY-ao-DDh"/>
                             <constraint firstItem="YEg-7x-3YA" firstAttribute="leading" secondItem="6zf-Kr-Tnz" secondAttribute="trailing" constant="3" id="uqa-3o-ike"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9cN-2t-gSl" secondAttribute="trailing" constant="-20" id="vRy-Zc-I5h"/>
                             <constraint firstItem="01M-IG-Elz" firstAttribute="top" secondItem="9cN-2t-gSl" secondAttribute="bottom" constant="8" id="xCd-Yi-Ryi"/>
@@ -332,11 +331,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JobCell" rowHeight="118" id="WCw-Qf-5nD" customClass="JobCell" customModule="Gov_Jobs_Search_In_USA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="86" width="600" height="118"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JobCell" rowHeight="122" id="WCw-Qf-5nD" customClass="JobCell" customModule="Gov_Jobs_Search_In_USA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="122"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="117.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="121.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="XDw-Dh-Rpg">
@@ -373,7 +372,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RME-Pt-8cK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RME-Pt-8cK">
                                             <rect key="frame" x="8" y="48" width="584" height="15"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Locations_Label">

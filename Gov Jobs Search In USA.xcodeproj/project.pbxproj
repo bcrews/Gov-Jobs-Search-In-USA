@@ -7,29 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4239AAAA1C646616001BDD65 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239AAA91C646616001BDD65 /* JobCell.swift */; };
-		427AC2A51C702819002E6F30 /* JobSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427AC2A41C702819002E6F30 /* JobSearchViewController.swift */; };
-		42C20D931C61628100CF4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D921C61628100CF4373 /* AppDelegate.swift */; };
-		42C20D961C61628100CF4373 /* Blog_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D941C61628100CF4373 /* Blog_Reader.xcdatamodeld */; };
-		42C20D981C61628100CF4373 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D971C61628100CF4373 /* MasterViewController.swift */; };
-		42C20D9A1C61628100CF4373 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C20D991C61628100CF4373 /* DetailViewController.swift */; };
-		42C20D9D1C61628100CF4373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C20D9B1C61628100CF4373 /* Main.storyboard */; };
-		42C20D9F1C61628100CF4373 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C20D9E1C61628100CF4373 /* Assets.xcassets */; };
-		42C20DA21C61628100CF4373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C20DA01C61628100CF4373 /* LaunchScreen.storyboard */; };
+		421366DC1C729CE800303CA5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421366DB1C729CE800303CA5 /* CoreLocation.framework */; };
+		422C27851C730290001B537F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C27841C730290001B537F /* Helper.swift */; };
+		422C27871C7302B3001B537F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C27861C7302B3001B537F /* AppDelegate.swift */; };
+		422C27891C7302C8001B537F /* JobSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C27881C7302C8001B537F /* JobSearchViewController.swift */; };
+		422C278B1C7302DB001B537F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C278A1C7302DB001B537F /* MasterViewController.swift */; };
+		422C278D1C7302EF001B537F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C278C1C7302EF001B537F /* DetailViewController.swift */; };
+		422C278F1C730302001B537F /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C278E1C730302001B537F /* JobCell.swift */; };
+		422C27911C730341001B537F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422C27901C730341001B537F /* Assets.xcassets */; };
+		422C27981C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 422C27971C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld */; };
+		422C279A1C73041E001B537F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422C27991C73041E001B537F /* Default-568h@2x.png */; };
+		422C279D1C73044F001B537F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279B1C73044F001B537F /* LaunchScreen.storyboard */; };
+		422C27A01C73045E001B537F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279E1C73045E001B537F /* Main.storyboard */; };
+		422C27A21C7304BB001B537F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422C27A11C7304BB001B537F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4239AAA91C646616001BDD65 /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
-		427AC2A41C702819002E6F30 /* JobSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSearchViewController.swift; sourceTree = "<group>"; };
+		421366DB1C729CE800303CA5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		422C27841C730290001B537F /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = "Government Job Search/Helper.swift"; sourceTree = SOURCE_ROOT; };
+		422C27861C7302B3001B537F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Government Job Search/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		422C27881C7302C8001B537F /* JobSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobSearchViewController.swift; path = "Government Job Search/JobSearchViewController.swift"; sourceTree = SOURCE_ROOT; };
+		422C278A1C7302DB001B537F /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = "Government Job Search/MasterViewController.swift"; sourceTree = SOURCE_ROOT; };
+		422C278C1C7302EF001B537F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "Government Job Search/DetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		422C278E1C730302001B537F /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobCell.swift; path = "Government Job Search/JobCell.swift"; sourceTree = SOURCE_ROOT; };
+		422C27901C730341001B537F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Government Job Search/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		422C27991C73041E001B537F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		422C279C1C73044F001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		422C279F1C73045E001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
+		422C27A11C7304BB001B537F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Government Job Search/Info.plist"; sourceTree = SOURCE_ROOT; };
 		42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gov Jobs Search In USA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42C20D921C61628100CF4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42C20D951C61628100CF4373 /* Blog_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Blog_Reader.xcdatamodel; sourceTree = "<group>"; };
-		42C20D971C61628100CF4373 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		42C20D991C61628100CF4373 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		42C20D9C1C61628100CF4373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42C20D9E1C61628100CF4373 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42C20DA11C61628100CF4373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42C20DA31C61628100CF4373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421366DC1C729CE800303CA5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 		42C20D861C61628100CF4373 = {
 			isa = PBXGroup;
 			children = (
+				422C27991C73041E001B537F /* Default-568h@2x.png */,
+				421366DB1C729CE800303CA5 /* CoreLocation.framework */,
 				42C20D911C61628100CF4373 /* Gov Jobs Search In USA */,
 				42C20D901C61628100CF4373 /* Products */,
 			);
@@ -62,16 +71,17 @@
 		42C20D911C61628100CF4373 /* Gov Jobs Search In USA */ = {
 			isa = PBXGroup;
 			children = (
-				42C20D921C61628100CF4373 /* AppDelegate.swift */,
-				427AC2A41C702819002E6F30 /* JobSearchViewController.swift */,
-				42C20D971C61628100CF4373 /* MasterViewController.swift */,
-				42C20D991C61628100CF4373 /* DetailViewController.swift */,
-				4239AAA91C646616001BDD65 /* JobCell.swift */,
-				42C20D9B1C61628100CF4373 /* Main.storyboard */,
-				42C20D9E1C61628100CF4373 /* Assets.xcassets */,
-				42C20DA01C61628100CF4373 /* LaunchScreen.storyboard */,
-				42C20DA31C61628100CF4373 /* Info.plist */,
-				42C20D941C61628100CF4373 /* Blog_Reader.xcdatamodeld */,
+				422C27841C730290001B537F /* Helper.swift */,
+				422C27861C7302B3001B537F /* AppDelegate.swift */,
+				422C27881C7302C8001B537F /* JobSearchViewController.swift */,
+				422C278A1C7302DB001B537F /* MasterViewController.swift */,
+				422C278C1C7302EF001B537F /* DetailViewController.swift */,
+				422C278E1C730302001B537F /* JobCell.swift */,
+				422C27901C730341001B537F /* Assets.xcassets */,
+				422C27A11C7304BB001B537F /* Info.plist */,
+				422C279E1C73045E001B537F /* Main.storyboard */,
+				422C279B1C73044F001B537F /* LaunchScreen.storyboard */,
+				422C27971C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld */,
 			);
 			name = "Gov Jobs Search In USA";
 			path = "Blog Reader";
@@ -136,9 +146,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42C20DA21C61628100CF4373 /* LaunchScreen.storyboard in Resources */,
-				42C20D9F1C61628100CF4373 /* Assets.xcassets in Resources */,
-				42C20D9D1C61628100CF4373 /* Main.storyboard in Resources */,
+				422C27911C730341001B537F /* Assets.xcassets in Resources */,
+				422C27A01C73045E001B537F /* Main.storyboard in Resources */,
+				422C279D1C73044F001B537F /* LaunchScreen.storyboard in Resources */,
+				422C27A21C7304BB001B537F /* Info.plist in Resources */,
+				422C279A1C73041E001B537F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,32 +161,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42C20D961C61628100CF4373 /* Blog_Reader.xcdatamodeld in Sources */,
-				4239AAAA1C646616001BDD65 /* JobCell.swift in Sources */,
-				427AC2A51C702819002E6F30 /* JobSearchViewController.swift in Sources */,
-				42C20D931C61628100CF4373 /* AppDelegate.swift in Sources */,
-				42C20D981C61628100CF4373 /* MasterViewController.swift in Sources */,
-				42C20D9A1C61628100CF4373 /* DetailViewController.swift in Sources */,
+				422C27981C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld in Sources */,
+				422C278B1C7302DB001B537F /* MasterViewController.swift in Sources */,
+				422C27891C7302C8001B537F /* JobSearchViewController.swift in Sources */,
+				422C27871C7302B3001B537F /* AppDelegate.swift in Sources */,
+				422C278F1C730302001B537F /* JobCell.swift in Sources */,
+				422C27851C730290001B537F /* Helper.swift in Sources */,
+				422C278D1C7302EF001B537F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		42C20D9B1C61628100CF4373 /* Main.storyboard */ = {
+		422C279B1C73044F001B537F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42C20D9C1C61628100CF4373 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42C20DA01C61628100CF4373 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42C20DA11C61628100CF4373 /* Base */,
+				422C279C1C73044F001B537F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		422C279E1C73045E001B537F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				422C279F1C73045E001B537F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -216,7 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -255,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -268,7 +281,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Blog Reader/Info.plist";
+				INFOPLIST_FILE = "Government Job Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcappdesigns.GovJobsSearchInUSA;
 				PRODUCT_NAME = "Gov Jobs Search In USA";
@@ -280,7 +294,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Blog Reader/Info.plist";
+				INFOPLIST_FILE = "Government Job Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bcappdesigns.GovJobsSearchInUSA;
 				PRODUCT_NAME = "Gov Jobs Search In USA";
@@ -311,13 +326,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		42C20D941C61628100CF4373 /* Blog_Reader.xcdatamodeld */ = {
+		422C27971C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				42C20D951C61628100CF4373 /* Blog_Reader.xcdatamodel */,
 			);
-			currentVersion = 42C20D951C61628100CF4373 /* Blog_Reader.xcdatamodel */;
-			path = Blog_Reader.xcdatamodeld;
+			name = Gov_Jobs_Search.xcdatamodeld;
+			path = "../Government Job Search/Gov_Jobs_Search.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
