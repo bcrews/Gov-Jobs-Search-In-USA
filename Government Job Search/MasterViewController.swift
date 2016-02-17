@@ -27,11 +27,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     super.viewDidLoad()
     
     if !newSearch {
-      indicator.startAnimating()
-      indicator.backgroundColor = UIColor.lightGrayColor()
       performSearch()
-      indicator.stopAnimating()
-      indicator.hidesWhenStopped = true
+    }
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    if newSearch {
+      performSegueWithIdentifier("JobSearchSegue", sender: self)
+    } else {
+      performSearch()
+      self.tableView.reloadData()
     }
     
     let image = UIImage(named: "USA-Gov-Jobs-Logo-Banner")
@@ -39,28 +44,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     imageViewHeader.image = image
     imageViewHeader.contentMode = .ScaleToFill
     self.tableView.tableHeaderView = imageViewHeader
-    //self.navigationItem.titleView = imageViewHeader
-    
     
     // Do any additional setup after loading the view, typically from a nib.
-    
     if let split = self.splitViewController {
       let controllers = split.viewControllers
       self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-    }
-    
-  }
-  
-  override func viewDidAppear(animated: Bool) {
-    if newSearch {
-      performSegueWithIdentifier("JobSearchSegue", sender: self)
-    } else {
-      indicator.startAnimating()
-      indicator.backgroundColor = UIColor.lightGrayColor()
-      performSearch()
-      indicator.stopAnimating()
-      indicator.hidesWhenStopped = true
-      self.tableView.reloadData()
     }
   }
   
@@ -92,7 +80,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       }
     }
   }
-   
   
   // MARK: - Table View
   
@@ -224,17 +211,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
     case .Delete:
       tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-    case .Update:
-      self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
+   // case .Update:
+     // self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
     case .Move:
       tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
       tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+    default:
+      break
     }
   }
   
   func controllerDidChangeContent(controller: NSFetchedResultsController) {
-    //   self.tableView.reloadData()
-    self.tableView.endUpdates()
+    // self.tableView.reloadData()
+     self.tableView.endUpdates()
   }
   
   var indicator = UIActivityIndicatorView()
@@ -245,8 +234,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     indicator.center = self.view.center
     self.view.addSubview(indicator)
   }
-
-   
+  
+  
 }
 
 

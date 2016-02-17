@@ -16,10 +16,8 @@
 		422C278F1C730302001B537F /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C278E1C730302001B537F /* JobCell.swift */; };
 		422C27911C730341001B537F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422C27901C730341001B537F /* Assets.xcassets */; };
 		422C27981C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 422C27971C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld */; };
-		422C279A1C73041E001B537F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 422C27991C73041E001B537F /* Default-568h@2x.png */; };
 		422C279D1C73044F001B537F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279B1C73044F001B537F /* LaunchScreen.storyboard */; };
 		422C27A01C73045E001B537F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279E1C73045E001B537F /* Main.storyboard */; };
-		422C27A21C7304BB001B537F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422C27A11C7304BB001B537F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +29,6 @@
 		422C278C1C7302EF001B537F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "Government Job Search/DetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		422C278E1C730302001B537F /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobCell.swift; path = "Government Job Search/JobCell.swift"; sourceTree = SOURCE_ROOT; };
 		422C27901C730341001B537F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Government Job Search/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
-		422C27991C73041E001B537F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		422C279C1C73044F001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		422C279F1C73045E001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		422C27A11C7304BB001B537F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Government Job Search/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -53,7 +50,6 @@
 		42C20D861C61628100CF4373 = {
 			isa = PBXGroup;
 			children = (
-				422C27991C73041E001B537F /* Default-568h@2x.png */,
 				421366DB1C729CE800303CA5 /* CoreLocation.framework */,
 				42C20D911C61628100CF4373 /* Gov Jobs Search In USA */,
 				42C20D901C61628100CF4373 /* Products */,
@@ -77,9 +73,9 @@
 				422C278A1C7302DB001B537F /* MasterViewController.swift */,
 				422C278C1C7302EF001B537F /* DetailViewController.swift */,
 				422C278E1C730302001B537F /* JobCell.swift */,
+				422C279E1C73045E001B537F /* Main.storyboard */,
 				422C27901C730341001B537F /* Assets.xcassets */,
 				422C27A11C7304BB001B537F /* Info.plist */,
-				422C279E1C73045E001B537F /* Main.storyboard */,
 				422C279B1C73044F001B537F /* LaunchScreen.storyboard */,
 				422C27971C7303E4001B537F /* Gov_Jobs_Search.xcdatamodeld */,
 			);
@@ -149,8 +145,6 @@
 				422C27911C730341001B537F /* Assets.xcassets in Resources */,
 				422C27A01C73045E001B537F /* Main.storyboard in Resources */,
 				422C279D1C73044F001B537F /* LaunchScreen.storyboard in Resources */,
-				422C27A21C7304BB001B537F /* Info.plist in Resources */,
-				422C279A1C73041E001B537F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

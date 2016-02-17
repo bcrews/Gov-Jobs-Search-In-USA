@@ -48,7 +48,7 @@ class JobSearchViewController: UIViewController, UITextFieldDelegate, UIAlertVie
     var keywordArray: NSArray? = nil
     var locationArray: NSArray? = nil
     var locationState: String? = nil
-//    var locationCity: String? = nil
+    //    var locationCity: String? = nil
     
     keywordArray =  keywordSearchField.text?.componentsSeparatedByString(",")
     locationArray = locationSearchField.text?.componentsSeparatedByString(",")
@@ -66,7 +66,7 @@ class JobSearchViewController: UIViewController, UITextFieldDelegate, UIAlertVie
         if (locationArray != nil) {
           if locationArray!.count > 1 {
             if location .isEqual(locationArray![1]) {
-//              locationCity = locationArray![0] as? String
+              //              locationCity = locationArray![0] as? String
               locationState = locationArray![1] as? String
               searchString = searchString! + "+in+" + locationState!
             }
@@ -86,15 +86,14 @@ class JobSearchViewController: UIViewController, UITextFieldDelegate, UIAlertVie
       performSegueWithIdentifier("unwindToMaster", sender: self)
     }
   }
- 
+  
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
   }
-  
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     
@@ -103,6 +102,7 @@ class JobSearchViewController: UIViewController, UITextFieldDelegate, UIAlertVie
     if nextTag == 2 {
       textField.resignFirstResponder()
     }
+    
     // Find next responder
     let nextResponder = textField.superview?.viewWithTag(nextTag) as UIResponder!
     
@@ -138,16 +138,15 @@ class JobSearchViewController: UIViewController, UITextFieldDelegate, UIAlertVie
     
     // stop updating location to save battery life
     locationManager.stopUpdatingLocation()
-//    if placemark.locality != nil {print(placemark.locality!)}
-//    if placemark.postalCode != nil {print(placemark.postalCode!)}
-//    if placemark.administrativeArea != nil {print(placemark.administrativeArea!)}
-//    if placemark.country != nil {print(placemark.country!)}
+    //    if placemark.locality != nil {print(placemark.locality!)}
+    //    if placemark.postalCode != nil {print(placemark.postalCode!)}
+    //    if placemark.administrativeArea != nil {print(placemark.administrativeArea!)}
+    //    if placemark.country != nil {print(placemark.country!)}
     
     if placemark.locality != nil && placemark.administrativeArea != nil {
       locationSearchField.text = placemark.locality! + ", " + placemark.administrativeArea!
     }
   }
-  
   
   func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
     

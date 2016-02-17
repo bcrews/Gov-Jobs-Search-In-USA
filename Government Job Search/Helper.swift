@@ -14,11 +14,9 @@ public func performSearch() {
   // Core Data
   let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
   let context: NSManagedObjectContext = appDel.managedObjectContext
-
+  
   let url = NSURL(string: searchString!)!
-  
   let session = NSURLSession.sharedSession()
-  
   let task = session.dataTaskWithURL(url) { (data, response, error) -> Void in
     
     if error != nil {
@@ -26,13 +24,12 @@ public func performSearch() {
     } else {
       
       if let data = data {
-        
-        //    print(NSString(data: data, encoding: NSUTF8StringEncoding))
+        // print(NSString(data: data, encoding: NSUTF8StringEncoding))
         
         do {
           let jsonResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSArray
           
-         // print(jsonResult)
+          // print(jsonResult)
           
           if jsonResult.count > 0 {
             
@@ -58,7 +55,6 @@ public func performSearch() {
               
             } catch {print("Error in context.executeFetchRequest from CoreData")}
             
-            
             for job in jsonResult {
               
               var job_locations = ""
@@ -76,10 +72,9 @@ public func performSearch() {
                                   if (location .isEqual(locations[0])) {
                                     job_locations = location as! String
                                   } else {
-                                  job_locations = job_locations + ", " + (location as! String)
+                                    job_locations = job_locations + ", " + (location as! String)
+                                  }
                                 }
-                                }
-                                
                                 
                                 url += postingChannelID
                                 
@@ -100,15 +95,15 @@ public func performSearch() {
                                 newJob.setValue(rate_code, forKey: "rate_interval_code")
                                 newJob.setValue(job_locations, forKey: "locations")
                                 
-//                                print(position_title)
-//                                print(organization_name)
-//                                print(job_locations)
-//                                print(url)
-//                                print(minimum)
-//                                print(maximum)
-//                                print(start_date)
-//                                print(end_date)
-//                                print(rate_code)
+                                // print(position_title)
+                                // print(organization_name)
+                                // print(job_locations)
+                                // print(url)
+                                // print(minimum)
+                                // print(maximum)
+                                // print(start_date)
+                                // print(end_date)
+                                // print(rate_code)
                                 
                               } // job_locations
                             } // rate_code

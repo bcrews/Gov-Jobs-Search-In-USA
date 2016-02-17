@@ -14,14 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
   
   var window: UIWindow?
   
-  
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    
     let splitViewController = self.window!.rootViewController as! UISplitViewController
     let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-    
     
     navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
     splitViewController.delegate = self
@@ -33,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     splitViewController.preferredDisplayMode = .AllVisible
     splitViewController.preferredPrimaryColumnWidthFraction = 0.43
     splitViewController.maximumPrimaryColumnWidth = 512
-    
     
     return true
   }
@@ -73,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     return false
   }
+  
   // MARK: - Core Data stack
   
   lazy var applicationDocumentsDirectory: NSURL = {
@@ -135,6 +132,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
       }
     }
   }
-  
   
 }
