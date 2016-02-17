@@ -353,6 +353,11 @@
                                 <exclude reference="mRR-P5-nSS"/>
                             </mask>
                         </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="EqH-lP-AFL"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="seJ-Vg-bQk"/>
@@ -365,6 +370,11 @@
                                 <include reference="y9D-p7-vQR"/>
                                 <include reference="Dep-76-t4W"/>
                                 <include reference="mRR-P5-nSS"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="EqH-lP-AFL"/>
                             </mask>
                         </variation>
                     </view>
