@@ -33,6 +33,7 @@ public func performSearch() {
           
           if jsonResult.count > 0 {
             
+            
             // Clear Core Data
             let request = NSFetchRequest(entityName: "JobItems")
             
@@ -76,6 +77,9 @@ public func performSearch() {
                                   }
                                 }
                                 
+                                // sort start_date
+                                
+                                
                                 url += postingChannelID
                                 
                                 start_date = convertDate(start_date)
@@ -114,7 +118,7 @@ public func performSearch() {
                   } // url
                 } // organization_name
               }  // position_title
-            }
+            }  // end job in jsonResult loop
           }
         } catch {
           print("Failed to Deserialize JSON")

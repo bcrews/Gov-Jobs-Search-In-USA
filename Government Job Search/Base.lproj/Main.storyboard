@@ -672,7 +672,7 @@
         <image name="location" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="y95-8C-AB9"/>
         <segue reference="6S0-TO-JiA"/>
-        <segue reference="TAB-Oo-M1e"/>
     </inferredMetricsTieBreakers>
 </document>
