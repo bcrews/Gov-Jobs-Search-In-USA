@@ -166,7 +166,7 @@ public func numberOfDaysFromStart(startDate: String) -> Int   {
   dateFormater.dateFormat = "MM-dd-yyyy"
   
   let startDate = dateFormater.dateFromString(start)
-  var endDate = dateFormater.stringFromDate(end)
+  let endDate = dateFormater.stringFromDate(end)
   
   let now = dateFormater.dateFromString(endDate)
   
