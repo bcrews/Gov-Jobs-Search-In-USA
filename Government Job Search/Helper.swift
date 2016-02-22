@@ -51,7 +51,7 @@ public func performSearch() {
                   do { try context.save() } catch {print("Error in context save cleared items to CoreData")}
                 }
               } else {
-                
+          
               }
               
             } catch {print("Error in context.executeFetchRequest from CoreData")}
@@ -78,6 +78,7 @@ public func performSearch() {
                                 }
                                 
                                 // sort start_date
+                                let numDays =  numberOfDaysFromStart(start_date)
                                 
                                 
                                 url += postingChannelID
@@ -99,6 +100,7 @@ public func performSearch() {
                                 newJob.setValue(rate_code, forKey: "rate_interval_code")
                                 newJob.setValue(job_locations, forKey: "locations")
                                 
+                                newJob.setValue(numDays, forKey: "posting_days")
                                 // print(position_title)
                                 // print(organization_name)
                                 // print(job_locations)
@@ -156,4 +158,22 @@ public func findRateCodeDescription(rateCode: String) -> String {
   return description
 }
 
+public func numberOfDaysFromStart(startDate: String) -> Int   {
+  let start = convertDate(startDate)
+  let end = NSDate()
+  
+  let dateFormater = NSDateFormatter()
+  dateFormater.dateFormat = "MM-dd-yyyy"
+  
+  let startDate = dateFormater.dateFromString(start)
+  var endDate = dateFormater.stringFromDate(end)
+  
+  let now = dateFormater.dateFromString(endDate)
+  
+  let cal = NSCalendar.currentCalendar()
+  
+  let components = cal.components([.Day], fromDate: startDate!, toDate: now!, options: [])
+  
+  return components.day
+}
 

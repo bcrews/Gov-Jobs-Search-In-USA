@@ -169,7 +169,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     // Edit the sort key as appropriate.
  //   let sortDescriptor = NSSortDescriptor(key: "position_title", ascending: false)
-    let sortDescriptor = NSSortDescriptor(key: "start_date", ascending: true)
+    let sortDescriptor = NSSortDescriptor(key: "posting_days", ascending: true)
     
     fetchRequest.sortDescriptors = [sortDescriptor]
     

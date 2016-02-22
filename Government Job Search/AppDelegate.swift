@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
   
   lazy var managedObjectModel: NSManagedObjectModel = {
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-    let modelURL = NSBundle.mainBundle().URLForResource("Gov_Jobs_Search", withExtension: "momd")!
+    let modelURL = NSBundle.mainBundle().URLForResource("GovJobSearch", withExtension: "momd")!
     return NSManagedObjectModel(contentsOfURL: modelURL)!
   }()
   
@@ -89,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // Create the coordinator and store
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
     let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+    
     var failureReason = "There was an error creating or loading the application's saved data."
     do {
       try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
@@ -103,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
       // Replace this with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
       NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
-      abort()
+      abort()  // If error occurs here the database may have changed, erase the simulators app and rerun
     }
     
     return coordinator

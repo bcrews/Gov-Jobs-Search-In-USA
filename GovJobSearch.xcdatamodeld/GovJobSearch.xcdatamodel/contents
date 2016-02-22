@@ -8,11 +8,12 @@
         <attribute name="minimum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="organization_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posting_days" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="rate_interval_code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start_date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="JobItems" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="JobItems" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>
