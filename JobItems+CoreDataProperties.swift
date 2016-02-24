@@ -14,16 +14,16 @@ import CoreData
 
 extension JobItems {
 
-    @NSManaged var end_date: String?
-    @NSManaged var id: String?
-    @NSManaged var locations: String?
-    @NSManaged var maximum: NSNumber?
-    @NSManaged var minimum: NSNumber?
-    @NSManaged var organization_name: String?
-    @NSManaged var position_title: String?
-    @NSManaged var posting_days: NSNumber?
-    @NSManaged var rate_interval_code: String?
-    @NSManaged var start_date: String?
     @NSManaged var url: String?
+    @NSManaged var start_date: String?
+    @NSManaged var rate_interval_code: String?
+    @NSManaged var posting_days: NSNumber?
+    @NSManaged var position_title: String?
+    @NSManaged var organization_name: String?
+    @NSManaged var minimum: NSNumber?
+    @NSManaged var maximum: NSNumber?
+    @NSManaged var locations: String?
+    @NSManaged var id: String?
+    @NSManaged var end_date: String?
 
 }
