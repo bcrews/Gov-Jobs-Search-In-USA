@@ -17,6 +17,9 @@
 		422C279D1C73044F001B537F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279B1C73044F001B537F /* LaunchScreen.storyboard */; };
 		422C27A01C73045E001B537F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422C279E1C73045E001B537F /* Main.storyboard */; };
 		4250921C1C791CC5003ED067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C27861C7302B3001B537F /* AppDelegate.swift */; };
+		428FF65C1C7D1FA00038FA9C /* JobItems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428FF65A1C7D1FA00038FA9C /* JobItems+CoreDataProperties.swift */; };
+		428FF65D1C7D1FA00038FA9C /* JobItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428FF65B1C7D1FA00038FA9C /* JobItems.swift */; };
+		42A02DCF1C7D4E830027D36B /* GovJobSearch 2.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 42A02DCE1C7D4E200027D36B /* GovJobSearch 2.xcdatamodel */; };
 		42DAE0B21C7AC01D00E586A6 /* GovJobSearch.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 42DAE0B11C7AC01D00E586A6 /* GovJobSearch.xcdatamodel */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +35,11 @@
 		422C279C1C73044F001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
 		422C279F1C73045E001B537F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Government Job Search/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		422C27A11C7304BB001B537F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Government Job Search/Info.plist"; sourceTree = SOURCE_ROOT; };
+		428FF65A1C7D1FA00038FA9C /* JobItems+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobItems+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		428FF65B1C7D1FA00038FA9C /* JobItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobItems.swift; sourceTree = SOURCE_ROOT; };
+		42A02DCE1C7D4E200027D36B /* GovJobSearch 2.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; name = "GovJobSearch 2.xcdatamodel"; path = "GovJobSearch.xcdatamodeld/GovJobSearch 2.xcdatamodel"; sourceTree = "<group>"; };
 		42C20D8F1C61628100CF4373 /* Gov Jobs Search In USA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gov Jobs Search In USA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42DAE0B11C7AC01D00E586A6 /* GovJobSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = GovJobSearch.xcdatamodel; path = GovJobSearch.xcdatamodeld/GovJobSearch.xcdatamodel; sourceTree = "<group>"; };
+		42DAE0B11C7AC01D00E586A6 /* GovJobSearch.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; name = GovJobSearch.xcdatamodel; path = GovJobSearch.xcdatamodeld/GovJobSearch.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 		42C20D861C61628100CF4373 = {
 			isa = PBXGroup;
 			children = (
+				42A02DCE1C7D4E200027D36B /* GovJobSearch 2.xcdatamodel */,
 				42DAE0B11C7AC01D00E586A6 /* GovJobSearch.xcdatamodel */,
 				421366DB1C729CE800303CA5 /* CoreLocation.framework */,
 				42C20D911C61628100CF4373 /* Gov Jobs Search In USA */,
@@ -69,6 +76,8 @@
 		42C20D911C61628100CF4373 /* Gov Jobs Search In USA */ = {
 			isa = PBXGroup;
 			children = (
+				428FF65A1C7D1FA00038FA9C /* JobItems+CoreDataProperties.swift */,
+				428FF65B1C7D1FA00038FA9C /* JobItems.swift */,
 				422C27841C730290001B537F /* Helper.swift */,
 				422C27861C7302B3001B537F /* AppDelegate.swift */,
 				422C27881C7302C8001B537F /* JobSearchViewController.swift */,
@@ -157,9 +166,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42DAE0B21C7AC01D00E586A6 /* GovJobSearch.xcdatamodel in Sources */,
+				42A02DCF1C7D4E830027D36B /* GovJobSearch 2.xcdatamodel in Sources */,
 				4250921C1C791CC5003ED067 /* AppDelegate.swift in Sources */,
 				422C278B1C7302DB001B537F /* MasterViewController.swift in Sources */,
+				428FF65D1C7D1FA00038FA9C /* JobItems.swift in Sources */,
 				422C27891C7302C8001B537F /* JobSearchViewController.swift in Sources */,
+				428FF65C1C7D1FA00038FA9C /* JobItems+CoreDataProperties.swift in Sources */,
 				422C278F1C730302001B537F /* JobCell.swift in Sources */,
 				422C27851C730290001B537F /* Helper.swift in Sources */,
 				422C278D1C7302EF001B537F /* DetailViewController.swift in Sources */,
