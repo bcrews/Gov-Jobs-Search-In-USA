@@ -19,6 +19,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   var managedObjectContext: NSManagedObjectContext? = nil
   var postingChannelID: String! = "?PostingChannelID=SwBqw/ctY3+Cce3bXAK/bqQzyOdZjO51gfzvhN50LlU="
   
+  var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+  
   @IBAction func unwindToMaster(segue: UIStoryboardSegue) {
     newSearch = false
   }
@@ -26,19 +28,29 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if !newSearch {
-      performSearch()
-    }
     
   }
   
   override func viewDidAppear(animated: Bool) {
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+    super.viewWillAppear(animated)
+    
     if newSearch {
       performSegueWithIdentifier("JobSearchSegue", sender: self)
     } else {
+      startActivityIndicator()
       performSearch()
       self.tableView.reloadData()
+      stopActivityIndicator()
     }
+    
     
     let image = UIImage(named: "USA-Gov-Jobs-Logo-Banner")
     let imageViewHeader = UIImageView(frame: CGRect(x: 0,y: 0 , width: (self.view.bounds.width), height: (image?.size.height)!/4))
@@ -51,15 +63,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       let controllers = split.viewControllers
       self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
     }
-  }
-  
-  override func prefersStatusBarHidden() -> Bool {
-    return true
-  }
-  
-  override func viewWillAppear(animated: Bool) {
-    self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-    super.viewWillAppear(animated)
+
+
   }
   
   override func didReceiveMemoryWarning() {
@@ -118,8 +123,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       } catch {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        //print("Unresolved error \(error), \(error.userInfo)")
-        abort()
+       // abort()
+        print("Error in context.save")
       }
     }
   }
@@ -136,9 +141,15 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     let object = self.fetchedResultsController.objectAtIndexPath(indexPath)
     
     let jobCell = cell as! JobCell
-    jobCell.position_title.text = object.valueForKey("position_title")!.description
-    jobCell.organization_name.text = object.valueForKey("organization_name")!.description
-    jobCell.locations.text = object.valueForKey("locations")!.description
+    if object.valueForKey("position_title") != nil {
+      jobCell.position_title.text = object.valueForKey("position_title")!.description
+    }
+    if object.valueForKey("organization_name") != nil {
+      jobCell.organization_name.text = object.valueForKey("organization_name")!.description
+    }
+    if object.valueForKey("locations")!.description != nil {
+      jobCell.locations.text = object.valueForKey("locations")!.description
+    }
     
     if object.valueForKey("rate_interval_code")! .isEqualToString("PA") {
       numberFormatter.maximumFractionDigits = 0
@@ -165,7 +176,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     fetchRequest.entity = entity
     
     // Set the batch size to a suitable number.
-    fetchRequest.fetchBatchSize = 20
+    fetchRequest.fetchBatchSize = 200
     
     // Edit the sort key as appropriate.
  //   let sortDescriptor = NSSortDescriptor(key: "position_title", ascending: false)
@@ -184,8 +195,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     } catch {
       // Replace this implementation with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-      //print("Unresolved error \(error), \(error.userInfo)")
-      abort()
+      // abort()
+      print("Error with fetchResultsController!.performFetch")
+      
     }
     
     return _fetchedResultsController!
@@ -228,13 +240,20 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
      self.tableView.endUpdates()
   }
   
-  var indicator = UIActivityIndicatorView()
+  func startActivityIndicator() {
+    activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+    activityIndicator.center = self.tableView.center
+    activityIndicator.hidesWhenStopped = true
+    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+    self.view.addSubview(activityIndicator)
+
+    activityIndicator.startAnimating()
+    UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+  }
   
-  func activityIndicator(var indicator: UIActivityIndicatorView) {
-    indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
-    indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-    indicator.center = self.view.center
-    self.view.addSubview(indicator)
+  func stopActivityIndicator() {
+    activityIndicator.stopAnimating()
+    UIApplication.sharedApplication().endIgnoringInteractionEvents()
   }
   
   

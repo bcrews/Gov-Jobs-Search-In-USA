@@ -644,7 +644,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="2th-Da-lxW" kind="presentation" identifier="JobSearchSegue" modalTransitionStyle="crossDissolve" id="y95-8C-AB9"/>
+                        <segue destination="2th-Da-lxW" kind="show" identifier="JobSearchSegue" id="y95-8C-AB9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -672,7 +672,7 @@
         <image name="location" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y95-8C-AB9"/>
         <segue reference="6S0-TO-JiA"/>
+        <segue reference="y95-8C-AB9"/>
     </inferredMetricsTieBreakers>
 </document>
